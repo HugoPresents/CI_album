@@ -1,0 +1,191 @@
+body {
+	background: url("../../source/img/main_bg.png");
+	margin:0;
+	color:#333;
+	font-size: 14px;
+}
+
+a, a:link {
+	color: #2C76C0;
+	outline: medium none;
+	text-decoration: none;
+}
+
+ul {
+	padding-left:20px;
+}
+
+li {
+	list-style:none;
+}
+
+h1 {
+	font-size:20px;
+}
+
+h2 {
+	border-bottom: 1px dotted #DDD;
+	font-size: 18px;
+	font-weight: normal;
+	margin: 15px 0;
+	padding-bottom:5px;
+}
+
+a:hover {
+	color:#61A7ED;
+	text-decoration:none;
+}
+
+input {
+	cursor:pointer;
+}
+
+input, textarea {
+	border-width: 1px;
+	border-style: solid;
+	border-color: silver #D9D9D9 #D9D9D9 #D9D9D9;
+	border-radius: 2px;
+	font-size:12px;
+	outline: medium none;
+	padding: 5px;
+	vertical-align: baseline;
+}
+
+input[type='submit'], input[type='button'] {
+	background:#333333;
+	padding:2px 8px;
+	height:22px;
+	color: white;
+	border-radius: 5px;
+}
+
+input[type='submit']:hover, input[type='button']:hover {
+	background:#555555;
+}
+
+label.input-s {
+	display: inline-block;
+	font-size: 14px;
+	padding-left: 10px;
+	width: 100px;
+	zoom: 1;
+}
+
+form p {
+	border-bottom: 1px dotted #EEE;
+	padding-bottom: 10px;
+}
+
+#wapper {
+	margin: 60px auto 0;
+	position: relative;
+	width: 980px;
+}
+
+#nav_bar {
+	height:50px;
+	width: 100%;
+	position:fixed;
+	float:left;
+}
+
+#album_desc {
+	font-size:11px;
+	color:#999999;
+}
+
+#sliderbar {
+	position: fixed;
+	float: left;
+	text-align:center;
+	margin-top:70px;
+	font-size:13px;
+}
+
+#sliderbar ul {
+	padding-left:20px;
+}
+
+#sliderbar li {
+	list-style: none;
+	padding-top: 10px;
+	font-size: 13px;
+}
+
+#sliderbar a {
+
+}
+
+#sliderbar a:hover {
+	
+}
+
+#album_name {
+	color:#333;
+}
+
+#content {
+	background-color: white;
+	border: 1px solid #E6E6E6;
+	margin-left: 200px;
+	position: relative;
+	display:inline-block;
+	position:relative;
+	width: 800px;
+	padding:20px;
+}
+
+#pagination {
+	width:800px;
+	margin:10px 0;
+	text-align:center;
+	font-size:18px;
+}
+
+a.cur_page {
+	padding: 3px 10px;
+	margin-left:10px;
+	color:#333;
+}
+
+a.cur_page:hover {
+	color:#333;
+}
+
+a.page_link {
+	padding: 2px 10px;
+	border: 1px solid #333;
+	margin-left: 10px;
+	background: #333;
+	color: white;
+	border-radius: 5px;
+}
+
+a.page_link:hover {
+	background:#555;
+	border-color:#555;
+}
+
+#footer {
+	text-align:center;
+	width: 800px;
+	float: left;
+	font-size: 12px;
+	margin-left:200px;
+	margin-top:30px;
+	color: #999999;
+}
+
+#footer a {
+	font-size:12px;
+	color:#999999;
+}
+
+#footer a:hover {
+	color:#222;
+	text-decoration:bold;
+}
+
+#footer a:link {
+	font-weight:bold;
+}

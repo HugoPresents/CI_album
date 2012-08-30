@@ -1,0 +1,42 @@
+#setting input[name='submit'] {
+	margin-left:10px;
+}
+#setting input[name='description'] {
+	width:200px;
+}
+
+#setting input[name='album_name'] {
+	width:150px;
+}
+
+#setting_bar {
+	width:700px;
+	height: 30px;
+}
+
+#setting_bar li {
+	font-size: 14px;
+	float:left;
+}
+
+#album_setting, #change_pass {
+	float:top;
+}
+
+#setting_bar a {
+	cursor:pointer;
+}
+
+.setting_selected {
+	color:#333;
+	text-decoration:none;
+}
+
+.setting_selected:hover {
+	color:#333;
+	text-decoration:none;
+}
+
+.hide {
+	display:none;
+}

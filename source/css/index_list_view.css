@@ -1,0 +1,33 @@
+#index_list {
+	position:relative;
+	display:inline-block;
+}
+
+.photo_area {
+	display:inline-block;
+	position:relative;
+	margin:10px;
+	padding:10px 10px 0 10px;
+	border: 1px solid white;
+	text-align:center;
+	vertical-align: top;
+	border-radius: 3px;
+	background:#EEEEEE;
+}
+
+.photo_name {
+	text-align:center;
+	padding: 5px 0;
+	font-size: 12px;
+	color: #555;
+	width:150px;
+}
+
+.photo_area:hover {
+	border: 1px solid #DDD;
+}
+
+.image {
+	max-height:180px;
+	overflow:hidden;
+}

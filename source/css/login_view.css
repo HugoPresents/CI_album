@@ -1,0 +1,28 @@
+#login {
+	margin: 30px;
+}
+
+#login h2 {
+	border-bottom: 1px dotted #DDD;
+	font-size: 18px;
+	font-weight: normal;
+	margin: 15px 0;
+}
+
+div.form-left {
+	float:left;
+	font-size:13px;
+}
+
+div.form-right {
+	float:right;
+	font-size:13px;
+}
+
+#login input[type="text"] {
+	width:150px;
+}
+
+#login input[type="password"] {
+	width:150px;
+}
