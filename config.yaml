@@ -1,0 +1,5 @@
+name: tuzki52
+version: 1
+
+handle:
+- rewrite: if( !is_file() && path ~ "^(.*)$" ) goto "/index.php/$1"
