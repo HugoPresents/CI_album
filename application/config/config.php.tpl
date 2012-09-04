@@ -14,11 +14,11 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://' . $_SERVER['HTTP_HOST'];
-$config['site_url'] = 'http://' . $_SERVER['HTTP_HOST'];
+//$config['base_url']	= 'http://' . $_SERVER['HTTP_HOST'];
+//$config['site_url'] = 'http://' . $_SERVER['HTTP_HOST'];
 
-// $config['base_url']	= 'http://rabbit.com/PHP_proj/Tuzki52/1/';
-// $config['site_url'] = 'http://rabbit.com/PHP_proj/Tuzki52/1/';
+$config['base_url']	= 'http://album.localhost';
+$config['site_url'] = 'http://album.localhost';
 /*
 |--------------------------------------------------------------------------
 | Index File
