@@ -13,7 +13,7 @@
 		}
 		
 		function do_upload() {
-			$id = $this->Photo_model->upload();
+			$id = $this->Photo_model->insert();
 			/*
 			if($id) {
 				static_view('上传成功', '上传成功！现在你有两条路选择：' . anchor('photo/id/' . $id, '查看已上传图片') . '&nbsp;或者&nbsp;'.  anchor('upload', '继续上传'));

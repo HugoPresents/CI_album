@@ -25,6 +25,7 @@
 				$user = $result->row();
 				if($pass === $user->pass) {
 					$this->session->set_userdata(array(
+						'id' => $user->id,
 						'user' => $user,
 						'is_login' => TRUE
 					));

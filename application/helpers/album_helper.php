@@ -60,3 +60,26 @@
 			return FALSE;
 		}
 	}
+	if(! function_exists('print_var')) {
+		function print_vars() {
+			$vars = func_get_args();
+			echo '<pre>';
+			foreach ($vars as $var) {
+				var_dump($var);
+			}
+			echo '</pre>';
+		}
+	}
+	if(! function_exists('mkdirs')) {
+		function mkdirs($dir) {  
+			if(!is_dir($dir)) {  
+				if(!mkdirs(dirname($dir))){  
+					return false;  
+				}  
+				if(!mkdir($dir,0755)) {  
+					return false;  
+				}  
+			}
+			return true;  
+		}
+	}
