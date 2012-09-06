@@ -5,7 +5,7 @@
 		}
 		
 		function index() {
-			$data['title'] = '站点设置'. '|' . get_options('album_name');
+			$data['title'] = '站点设置';
 			$data['css'] = 'setting_view.css';
 			$data['js'] = 'setting_view.js';
 			$data['main_content'] = 'setting_view';

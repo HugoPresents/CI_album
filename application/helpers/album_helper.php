@@ -35,7 +35,7 @@
 	//加载静视图辅助函数
 	function static_view($title = '', $message = '', $back_url = '') {
 		$CI =& get_instance();
-		$data['title'] = $title. '|' . get_options('album_name');
+		$data['title'] = $title;
 		$data['message'] = $message;
 		$data['back_url'] = $back_url;
 		$data['main_content'] = 'static_view';

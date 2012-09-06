@@ -80,7 +80,7 @@ $autoload['helper'] = array('url', 'form', 'cookie', 'album');
 |
 */
 
-$autoload['config'] = array();
+$autoload['config'] = array('album');
 
 
 /*

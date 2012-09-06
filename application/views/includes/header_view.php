@@ -8,4 +8,4 @@
 		<script type="text/javascript">
 			var SITE_URL = '<?=site_url() ?>';
 		</script>
-		<title><?=$title ?></title>
+		<title><?=$title.' | '.get_options('album_name') ?></title>
