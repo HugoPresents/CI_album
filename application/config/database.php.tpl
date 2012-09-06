@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 // 新浪云数据库
-$db['default']['hostname'] = SAE_MYSQL_HOST_M;
-$db['default']['username'] = SAE_MYSQL_USER;
-$db['default']['password'] = SAE_MYSQL_PASS;
-$db['default']['database'] = SAE_MYSQL_DB;
+$db['default']['hostname'] = localhost;
+$db['default']['username'] = root;
+$db['default']['password'] = password;
+$db['default']['database'] = ci_album;
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
