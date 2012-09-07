@@ -14,7 +14,7 @@
 		
 		function do_upload() {
 			if($id = $this->Photo_model->insert()) {
-				static_view('上传成功', '上传成功！现在你有两条路选择：' . anchor('photo/id/' . $id, '查看已上传图片') . '&nbsp;或者&nbsp;'.  anchor('upload', '继续上传'));
+				static_view('上传成功', '上传成功！现在你有两条路选择：' . anchor('photo/' . $id, '查看已上传图片') . '&nbsp;或者&nbsp;'.  anchor('upload', '继续上传'));
 			} else {
 				static_view('上传失败', '图片上传失败', site_url('upload'));
 			}

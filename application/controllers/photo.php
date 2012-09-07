@@ -1,29 +1,16 @@
 <?php
-	class Photo extends CI_Controller {
+	class Photo extends MY_Controller {
 		function __construct() {
 			parent::__construct();
 			$this->load->model('Photo_model');
 		}
 		
-		function index() {
-			$list = $this->Photo_model->get_list();
-			if($list) {
-				$data['list'] = $list;
-				$data['title'] = '首页';
-			} else {
-				$data['message'] = '你还没有上传照片' . anchor('upload', '点此上传');
-				$data['title'] = '首页';
-				$data['main_content'] = 'static_view';
-				$this->load->view('includes/template_view', $data);
-			}
-		}
-		//根据id查看图片
-		function id($id = '') {
-			$data['image'] = $this->Photo_model->id($id);
+		function index($id = '') {
+			$data['image'] = $this->Photo_model->fetch_one($id);
 			if($data['image']) {
 				$data['next'] = $this->Photo_model->next_photo($id);
 				$data['prev'] = $this->Photo_model->prev_photo($id);
-				$data['title'] = $data['image']['image_info']->title . '|' . get_options('album_name');
+				$data['title'] = $data['image']->title;
 				$data['main_content'] = 'photo_view';
 				$data['css'] = 'photo_view.css';
 				$data['js'] = 'photo_view.js';
@@ -39,10 +26,10 @@
 		
 		function delete($id = '') {
 			if($id != '') {
-				if($this->Photo_model->delete_photo($id)) {
-					redirect(isset($_SERVER['HTTP_REFERER']) ? ($_SERVER['HTTP_REFERER']) : site_url());
+				if($this->Photo_model->delete($id)) {
+					redirect();
 				} else {
-					static_view('删除失败', '删除图片失败,返回查看该图片', site_url('photo/id/' . $id));
+					static_view('删除失败', '删除图片失败,返回查看该图片', site_url('photo/' . $id));
 				}
 			} else {
 				static_view('删除失败', '删除图片失败,要删除的图片不存在');
@@ -60,7 +47,7 @@
 			if($this->input->post('desc') != '') {
 				$array['description'] = $this->input->post('desc');
 			}
-			if($this->Photo_model->update_photo($id, $array)) {
+			if($this->Photo_model->update($id, $array)) {
 				echo '1';
 			} else {
 				echo '0';

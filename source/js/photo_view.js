@@ -37,7 +37,7 @@ $(function() {
 		$(this).hide();
 		str = '<input type="text" name="title" value="' + title + '">';
 		$(this).before(str);
-		$("input[name='title']").focus();
+		$("input[name='title']").focus().select();
 		$("input[name='title']").blur(function() {
 			changed = $(this).val();
 			if(changed != title && changed != '') {
@@ -73,7 +73,7 @@ $(function() {
 		$(this).hide();
 		str = '<textarea name="desc">' + desc + '</textarea>';
 		$(this).before(str);
-		$("textarea[name='desc']").focus();
+		$("textarea[name='desc']").focus().select();
 		$("textarea[name='desc']").blur(function() {
 			changed = $(this).val();
 			if(changed != desc && changed != '') {

@@ -83,3 +83,32 @@
 			return true;  
 		}
 	}
+	if(! function_exists('thumb_url')) {
+		function thumb_url($filename, $thumb = '100') {
+			$CI = &get_instance();
+			$thumb_url = $CI->config->item('album_path') . $thumb . '/' . $filename;
+			//print_vars($filename, $thumb, $thumb_url);
+			if(file_exists($thumb_url)) {
+				return site_url($thumb_url);
+			} elseif ($thumb != 'original') {
+				$original_path = $CI->config->item('album_path') . 'original/' . $filename;
+				//print_vars($original_path);
+				$CI->load->library('image_lib');
+				$thumb = array(
+					'source_image' => $original_path,
+					'create_thumb' => TRUE,
+					'maintain_ratio' => TRUE,
+					'thumb_marker' => '',
+					'quality' => 100,
+					'new_image' => $CI->config->item('album_path') . $thumb .'/',
+					'width' => 100,
+					'height' => 100
+				);
+				mkdirs($thumb['new_image']);
+				$CI->image_lib->initialize($thumb);
+				$CI->image_lib->resize();
+				return $thumb_url;
+			}
+			return FALSE;
+		}
+	}
