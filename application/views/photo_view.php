@@ -20,7 +20,7 @@
 		<? endif ?>
 		<p><a class="image_attr">图片尺寸: </a><?=$image->width . ' × ' . $image->height ?></p>
 		<p><a class="image_attr">图片大小: </a><?=$image->size ?> KB</p>
-		<p><a class="image_attr">上传时间: </a><?=$image->time ?></p>
+		<p><a class="image_attr">上传时间: </a><?=date('Y年m月d日 H:i:s', $image->time) ?></p>
 		<? if($this->session->userdata('is_login')): ?>
 		<p class="operate"><a class="image_attr">操作: </a><?=anchor('photo/delete/' . $image->id, '删除', 'class="delete_link"') ?></p>
 		<? endif ?>
