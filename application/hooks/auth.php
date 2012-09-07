@@ -1,4 +1,13 @@
 <?php
+	function init() {
+		$CI = &get_instance();
+		$user = $CI->db->get('users');
+		$CI->load->helper('url');
+		if($CI->uri->uri_string() != 'index/create_user' && $user->num_rows < 1) {
+			redirect('index/create_user');
+		}
+	}
+
 	class Auth {
 		private $CI;
 		private $is_login;
@@ -6,8 +15,9 @@
 			$this->CI = &get_instance();
 			$this->CI->load->library('session'); 
 			$this->CI->load->helper('url');
-			$this->is_login = isset($this->CI->session->userdata['is_login']) ? $this->CI->session->userdata['is_login'] : '' ;
+			$this->is_login = $this->CI->session->userdata('is_login') ? $this->CI->session->userdata('is_login') : '' ;
 		}
+		
 		//控制器限制
 		function controller_auth() {
 			//先尝试用cookie登录
@@ -17,6 +27,7 @@
 				'upload',
 			);
 			if(in_array($this->CI->uri->segment(1), $array) && !$this->is_login) {
+				exit('here');
 					//echo '控制器钩子检测到';
 				redirect('index/error');
 			} else {

@@ -44,9 +44,9 @@
 	//加载跳转视图辅助函数
 	function jump_view($title = '', $message = '', $jump_url = '') {
 		$CI =& get_instance();
-		$data['title'] = $title. '|' . get_options('album_name');
+		$data['title'] = $title;
 		$data['message'] = $message;
-		$data['jump_url'] = $jump_url;
+		$data['jump_url'] = site_url($jump_url);
 		$data['main_content'] = 'jump_view';
 		$CI->load->view('includes/template_view', $data);
 	}

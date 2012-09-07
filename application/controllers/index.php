@@ -41,28 +41,76 @@
 		
 		function login() {
 			if($this->session->userdata('is_login')) {
-				redirect(site_url());
+				redirect();
 			} else {
 				delete_cookie('name');
 				delete_cookie('pass');
+				$data['name'] = '';
+				$data['pass'] = '';
+				$data['name_error'] = '';
+				$data['pass_error'] = '';
+				$data['remember_status'] = 0;
+				if($this->input->post('submit')) {
+					$data['name'] = trim($this->input->post('name'));
+					$data['pass'] = $this->input->post('pass');
+					$data['remember_status'] = $this->input->post('remember_status');
+					if(!$data['name']) {
+						$data['name_error'] = '用户名不能为空';
+					} elseif(!$data['pass']) {
+						$data['pass_error'] = '密码不能为空';
+					} else {
+						$login_code = $this->User_model->login($data['name'], md5($data['pass']));
+						if($login_code == 2) {
+							redirect();
+						} elseif($login_code == 1) {
+							$data['pass_error'] = '密码错误';
+						} else {
+							$data['name_error'] = '用户名不存在';
+						}
+					}
+				}
 				$data['main_content'] = 'login_view';
-				$data['title'] = '管理员登陆';
+				$data['title'] = '管理员登录';
 				$data['css'] = 'login_view.css';
-				$data['js'] = 'login_view.js';
 				$this->load->view('includes/template_view', $data);
 			}
 		}
 		
-		function do_login() {
-			$name = $this->input->post('name');
-			$pass = md5($this->input->post('pass'));
-			$login_code = $this->User_model->login($name, $pass);
-			if($login_code == 2) {
-				redirect(site_url());
-			} elseif($login_code == 1) {
-				static_view('登陆失败', '密码不正确，返回重新登录', site_url('index/login'));
+		function create_user() {
+			$user = $this->db->get('users');
+			if($user->num_rows < 1 || $this->session->userdata('is_login')){
+				$data['name'] = '';
+				$data['pass'] = '';
+				$data['pass_check'] = '';
+				$data['name_error'] = '';
+				$data['pass_error'] = '';
+				$data['pass_check_error'] = '';
+				if($this->input->post('submit')) {
+					$data['name'] = trim($this->input->post('name'));
+					$data['pass'] = $this->input->post('pass');
+					$data['pass_check'] = $this->input->post('pass_check');
+					if(!$data['name']) {
+						$data['name_error'] = '用户名不能为空';
+					} elseif(!$data['pass']) {
+						$data['pass_error'] = '密码不能为空';
+					} elseif($data['pass'] != $data['pass_check']) {
+						$data['pass_check_error'] = '密码不一致';
+					} else {
+						$user = array(
+							'name' => $data['name'],
+							'pass' => md5($data['pass'])
+						);
+						$this->User_model->insert($user);
+						jump_view('创建用户', '创建用户成功，请自行登录', 'index/login');
+						return;
+					}
+				}
+				$data['title'] = '创建用户';
+				$data['main_content'] = 'regist_view';
+				$data['css'] = 'setting_vies.css';
+				$this->load->view('includes/template_view', $data);
 			} else {
-				static_view('登陆失败', '用户名不存在，返回重新登录', site_url('index/login'));
+				redirect('index/error');
 			}
 		}
 		

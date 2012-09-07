@@ -4,9 +4,8 @@
  			parent::__construct();
  		}
 		
-		function insert_user($array, $table = 'users') {
+		function insert($array, $table = 'users') {
 			if($this->db->insert($table, $array)) {
-				
 				return TRUE;
 			} else {
 				return FALSE;
@@ -23,7 +22,7 @@
 			$result = $this->db->get('users');
 			if($result->num_rows > 0) {
 				$user = $result->row();
-				if($pass === $user->pass) {
+				if($pass == $user->pass) {
 					$this->session->set_userdata(array(
 						'id' => $user->id,
 						'user' => $user,

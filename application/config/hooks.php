@@ -9,12 +9,17 @@
 |	http://codeigniter.com/user_guide/general/hooks.html
 |
 */
-$hook['post_controller_constructor'] = array(
+$hook['post_controller_constructor'][] = array(
+	'function' => 'init',
+	'filename' => 'auth.php',
+	'filepath' => 'hooks'
+);
+$hook['post_controller_constructor'][] = array(
 	'class' => 'Auth',
 	'function' => 'controller_auth',
 	'filename' => 'auth.php',
 	'filepath' => 'hooks'
-	);
+);
 
 /* End of file hooks.php */
 /* Location: ./application/config/hooks.php */
