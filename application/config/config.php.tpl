@@ -14,11 +14,11 @@
 | path to your installation.
 |
 */
-//$config['base_url']	= 'http://' . $_SERVER['HTTP_HOST'];
-//$config['site_url'] = 'http://' . $_SERVER['HTTP_HOST'];
-
 $config['base_url']	= 'http://album.localhost';
 $config['site_url'] = 'http://album.localhost';
+
+// $config['base_url']	= 'http://rabbit.com/PHP_proj/Tuzki52/1/';
+// $config['site_url'] = 'http://rabbit.com/PHP_proj/Tuzki52/1/';
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -94,7 +94,7 @@ $config['charset'] = 'UTF-8';
 | setting this variable to TRUE (boolean).  See the user guide for details.
 |
 */
-$config['enable_hooks'] = TRUE;
+$config['enable_hooks'] = FALSE;
 
 
 /*

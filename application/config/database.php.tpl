@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 // 新浪云数据库
-$db['default']['hostname'] = localhost;
-$db['default']['username'] = root;
-$db['default']['password'] = password;
-$db['default']['database'] = ci_album;
+$db['default']['hostname'] = 'localhost';
+$db['default']['username'] = 'root';
+$db['default']['password'] = 'rabbit';
+$db['default']['database'] = 'album_test';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
@@ -63,7 +63,6 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
-$db['default']['port'] = SAE_MYSQL_PORT;
 //本地数据库
 // $db['default']['hostname'] = 'localhost';
 // $db['default']['username'] = 'root';
