@@ -90,14 +90,26 @@
 		 * 删除照片
 		 */
 		function delete($id) {
-			
+			$photo = $this->db->get_where('photos', array('id' => $id))->row();
+			$path_array = array(
+				'original/',
+				'500/',
+				'100/'
+			);
+			foreach ($path_array as $path) {
+				if(file_exists($this->config->item('album') . $path . $photo->name)) {
+					unlink($this->config->item('album') . $path . $photo->name);
+				}
+			}
+			$this->db->delete('photos', array('id' => $id));
 		}
 		
 		/**
 		 * 更新照片信息
 		 */
 		function update($id, $param = array()) {
-			
+			$this->db->where('id', $id);
+			$this->db->update('photos', $param);
 		}
 		/**
 		 * 获取图片列表
