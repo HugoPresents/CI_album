@@ -16,6 +16,7 @@
 			$album_name = $this->input->post('album_name');
 			$description = $this->input->post('description');
 			$per_page = $this->input->post('per_page');
+			$cookie_expire = $this->input->post('cookie_expire');
 			$options = array();
 			if($album_name != '') {
 				$options = array_merge($options, array('album_name' => $album_name));
@@ -25,6 +26,9 @@
 			}
 			if($per_page != '') {
 				$options = array_merge($options, array('per_page' => $per_page));
+			}
+			if($cookie_expire > 0) {
+				$options = array_merge($options, array('cookie_expire' => $cookie_expire));
 			}
 			//print_r($options);
 			update_options($options);

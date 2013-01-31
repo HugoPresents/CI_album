@@ -30,16 +30,20 @@
 					));
 					//在不是用cookie登陆的情况下勾选了记住登录，就会写入cookie到浏览器
 					if($remember == 1 && !$use_cookie) {
+						$cookie_expire = intval(get_options('cookie_expire'));
+						if(!$cookie_expire) {
+							$cookie_expire = 604800;
+						}
 						$cookie = array(
 							'name'   => 'name',
 							'value'  => $user->name,
-							'expire' => '86500'
+							'expire' => $cookie_expire
 						);
 						$this->input->set_cookie($cookie);
 						$cookie = array(
 							'name'   => 'pass',
 							'value'  => $user->pass,
-							'expire' => '86500'
+							'expire' => $cookie_expire
 						);
 						$this->input->set_cookie($cookie);
 					}

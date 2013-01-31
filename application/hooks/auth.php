@@ -27,7 +27,7 @@
 				'upload',
 			);
 			if(in_array($this->CI->uri->segment(1), $array) && !$this->is_login) {
-				exit('here');
+				//exit('here');
 					//echo '控制器钩子检测到';
 				redirect('index/error');
 			} else {

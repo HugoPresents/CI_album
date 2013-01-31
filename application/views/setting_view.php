@@ -11,6 +11,7 @@
 		<p><label class="input-s">相册名称：</label><?=form_input('album_name', get_options('album_name')) ?></p>
 		<p><label class="input-s">相册描述：</label><?=form_input('description', get_options('description')) ?></p>
 		<p><label class="input-s">每页显示数量：</label><?=form_input('per_page', get_options('per_page')) ?></p>
+		<p><label class="input-s">Cookie 过期时间(秒)：</label><?=form_input('cookie_expire', get_options('cookie_expire')) ?></p>
 		<p><?=form_submit('submit', '更新设置') ?></p>
 		<?=form_close() ?>
 	</div>

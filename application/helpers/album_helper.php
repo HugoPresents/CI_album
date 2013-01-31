@@ -19,9 +19,13 @@
 	//修改配置项
 	function update_options($array = array()) {
 		$CI =& get_instance();
+		//print_vars($array);
 		foreach($array as $name => $value) {
-			$CI->db->where('name', $name);
-			$CI->db->update('options', array('value' => $value));
+			if(get_options($name)) {
+				$CI->db->where('name', $name)->update('options', array('value' => $value));
+			} else {
+				insert_options(array('name'=>$name, 'value'=>$value));
+			}
 		}
 	}
 	//分割文件名为文件名和后缀

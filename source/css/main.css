@@ -67,8 +67,9 @@ label.input-s {
 	display: inline-block;
 	font-size: 14px;
 	padding-left: 10px;
-	width: 100px;
+	width: 150px;
 	zoom: 1;
+	text-align: right;
 }
 
 form p {

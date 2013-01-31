@@ -49,7 +49,7 @@
 				$data['pass'] = '';
 				$data['name_error'] = '';
 				$data['pass_error'] = '';
-				$data['remember_status'] = 0;
+				$data['remember_status'] = 1;
 				if($this->input->post('submit')) {
 					$data['name'] = trim($this->input->post('name'));
 					$data['pass'] = $this->input->post('pass');
