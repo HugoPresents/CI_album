@@ -6,4 +6,4 @@
 	// 生成缩略图宽度
 	$config['thumb_size'] = 500;
 	// 图片最大 大小
-	$config['max_size'] = 2048;
+	$config['max_size'] = 10240;

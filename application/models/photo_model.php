@@ -52,11 +52,11 @@
 			$title = explode_name($_FILES["file"]["name"], TRUE);
 			$filename = md5(time()) . explode_name($_FILES["file"]["name"], FALSE);
 			$config = array(
-		  		'allowed_types' =>$this->config->item('allow_types'),
-		  		'upload_path' => $this->config->item('album_path') . 'original/',
-		  		'max_size' => $this->config->item('max_size'),
-		  		'overwrite' => FALSE,
-		  		'file_name'	=> $filename
+				'allowed_types' =>$this->config->item('allow_types'),
+				'upload_path' => $this->config->item('album_path') . 'original/',
+				'max_size' => $this->config->item('max_size'),
+				'overwrite' => FALSE,
+				'file_name'	=> $filename
 			);
 			mkdirs($config['upload_path']);
 			//print_vars($config, $title);
