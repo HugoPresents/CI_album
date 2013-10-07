@@ -54,25 +54,25 @@
 		<? if(isset($image['small_url'])): ?>
 		<a class="exp_link" href="<?=$image['small_url'] ?>" target="_blank">150</a>
 		
-		<textarea readonly="readonly" class="exp_link_text"><a href="<?=site_url('photo/id/' . $image['image_info']->id) ?>" title="<?=$image['image_info']->title ?>"><img src="<?=$image['small_url'] ?>"></a></textarea>
+		<textarea readonly="readonly" class="exp_link_text"><a href="<?=site_url('photo/id/' . $image['image_info']->id) ?>" title="<?=$image['image_info']->title ?>"><img src="<?=$image['small_url'] ?>" alt="<?=$image['image_info']->title ?>"></a></textarea>
 		
 		<? endif ?>
 		<? if(isset($image['medium_url'])): ?>
 		<a class="exp_link" href="<?=$image['medium_url'] ?>" target="_blank">300</a>
 		
-		<textarea readonly="readonly" class="exp_link_text"><a href="<?=site_url('photo/id/' . $image['image_info']->id) ?>" title="<?=$image['image_info']->title ?>"><img src="<?=$image['medium_url'] ?>"></a></textarea>
+		<textarea readonly="readonly" class="exp_link_text"><a href="<?=site_url('photo/id/' . $image['image_info']->id) ?>" title="<?=$image['image_info']->title ?>"><img src="<?=$image['medium_url'] ?>" alt="<?=$image['image_info']->title ?>"></a></textarea>
 		
 		<? endif ?>
 		<? if(isset($image['big_url'])): ?>
 		<a class="exp_link" href="<?=$image['big_url'] ?>" target="_blank">500</a>
 		
-		<textarea readonly="readonly" class="exp_link_text"><a href="<?=site_url('photo/id/' . $image['image_info']->id) ?>" title="<?=$image['image_info']->title ?>"><img src="<?=$image['big_url'] ?>"></a></textarea>
+		<textarea readonly="readonly" class="exp_link_text"><a href="<?=site_url('photo/id/' . $image['image_info']->id) ?>" title="<?=$image['image_info']->title ?>"><img src="<?=$image['big_url'] ?>" alt="<?=$image['image_info']->title ?>"></a></textarea>
 		
 		<? endif ?>
 		<? if(isset($image['original_url'])): ?>
 		<a class="exp_link" href="<?=$image['original_url'] ?>" target="_blank">原始</a>
 		
-		<textarea readonly="readonly" class="exp_link_text"><a href="<?=site_url('photo/id/' . $image['image_info']->id) ?>" title="<?=$image['image_info']->title ?>"><img src="<?=$image['original_url'] ?>"></a></textarea>
+		<textarea readonly="readonly" class="exp_link_text"><a href="<?=site_url('photo/id/' . $image['image_info']->id) ?>" title="<?=$image['image_info']->title ?>"><img src="<?=$image['original_url'] ?>" alt="<?=$image['image_info']->title ?>"></a></textarea>
 		
 		<? endif ?>
 		</p>
