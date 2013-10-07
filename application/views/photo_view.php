@@ -54,17 +54,17 @@
 		<? if($thumb_url = thumb_url($image->name, '150')): ?>
 			<a class="exp_link" href="<?=$thumb_url ?>" target="_blank">150</a>
 			
-			<textarea readonly="readonly" class="exp_link_text"><a href="<?=site_url('photo/' . $image->id) ?>" title="<?=$image->title ?>"><img src="<?=$thumb_url ?>"></a></textarea>
+			<textarea readonly="readonly" class="exp_link_text"><a href="<?=site_url('photo/' . $image->id) ?>" title="<?=$image->title ?>"><img src="<?=$thumb_url ?>" alt="<?=$image->title ?>"></a></textarea>
 		<? endif ?>
 		<? if($thumb_url = thumb_url($image->name, '500')): ?>
 			<a class="exp_link" href="<?=$thumb_url ?>" target="_blank">500</a>
 			
-			<textarea readonly="readonly" class="exp_link_text"><a href="<?=site_url('photo/' . $image->id) ?>" title="<?=$image->title ?>"><img src="<?=$thumb_url ?>"></a></textarea>
+			<textarea readonly="readonly" class="exp_link_text"><a href="<?=site_url('photo/' . $image->id) ?>" title="<?=$image->title ?>"><img src="<?=$thumb_url ?>" alt="<?=$image->title ?>"></a></textarea>
 		<? endif ?>
 		<? if($original_url = thumb_url($image->name, 'original')): ?>
 			<a class="exp_link" href="<?=$original_url ?>" target="_blank">原始</a>
 			
-			<textarea readonly="readonly" class="exp_link_text"><a href="<?=site_url('photo/' . $image->id) ?>" title="<?=$image->title ?>"><img src="<?=$original_url ?>"></a></textarea>
+			<textarea readonly="readonly" class="exp_link_text"><a href="<?=site_url('photo/' . $image->id) ?>" title="<?=$image->title ?>"><img src="<?=$original_url ?>" alt="<?=$image->title ?>"></a></textarea>
 		<? endif ?>
 		</p>
 	</div>
